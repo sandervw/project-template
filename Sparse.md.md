@@ -2,64 +2,39 @@
 
 ## The Primary Laws
 
-1. All Sparse Markdown Laws must adhere to the Laws defined in Sparse.md. `No Exceptions.`
+1. All Sparse Markdown Laws must adhere to the Laws defined in `Sparse.md`. `No Exceptions.`
 2. All Markdown specific Sparse Laws must be specified within this file. `No Exceptions.`
+
+## Document Structure Laws
+
 3. All Sparse Markdown files must remain under 600 lines in length. `No Exceptions.`
-4. All Markdown instructions must be written as complete sentences. `No Exceptions.`
-5. All Markdown sentences must end with a period. `No Exceptions.`
-6. All Markdown documents must use headers to separate distinct topics. `No Exceptions.`
-7. All code blocks must be enclosed with triple backticks. `No Exceptions.`
+4. All Markdown documents must use headers to separate distinct topics. `No Exceptions.`
+5. All heading groups must contain no more than five sub-headings. `No Exceptions.`
+6. All Markdown documents must use no more than four heading levels: `#`, `##`, `###`, and `####`. `No Exceptions.`
+7. All blank lines between sections must number exactly one. `No Exceptions.`
 
-## The Secondary Laws
+## Sentence and Paragraph Laws
 
-8. All literal text, strings, and code identifiers must be wrapped in quotes or backticks. `No Exceptions.`
-9. All examples must be placed directly after the instruction they illustrate. `No Exceptions.`
-10. All Markdown sentences must contain between five and thirty words. `No Exceptions.`
-11. All lists must be introduced with a colon. `No Exceptions.`
-12. Semicolons must never appear in Markdown prose. `No Exceptions.`
-13. Hyphens and em-dashes must never appear in Markdown prose. `No Exceptions.`
+8. All Markdown sentences must end with a period. `No Exceptions.`
+9. All complete sentences must be fewer than thirty words, excluding list items. `No Exceptions.`
+10. All instructional sentences must contain no more than one conjunction from the following list: "and," "but," "or," "while." `No Exceptions.`
+11. Semicolons must never be used. `No Exceptions.`
 
-TODO
+## Code and Formatting Laws
+
+12. All code blocks must be enclosed with triple backticks. `No Exceptions.`
+13. All literal text, strings, and code identifiers must be wrapped in quotes or backticks. `No Exceptions.`
+14. All brackets and braces must appear only within code blocks or format templates. `No Exceptions.`
+15. All emphasis must use single asterisks for italic and double asterisks for bold. `No Exceptions.`
+16. All horizontal rules must use three hyphens: `---`. `No Exceptions.`
+17. All acronyms in code identifiers must appear in the following approved acronym list: API, ASCII, CLI, CPU, CSS, DNS, DOM, EOF, FTP, GPU, GUI, HTML, HTTP, HTTPS, ID, IO, IP, JSON, JWT, OAuth, OS, PDF, RAM, REST, SDK, SQL, SSH, SSL, TCP, TLS, UDP, UI, URI, URL, UTF, UUID, UX, XML, YAML. `No Exceptions.`
+
+## List and Instruction Laws
+
+18. All examples must be placed directly after the instruction they illustrate. `No Exceptions.`
+19. All instructions describing multiple actions must use Markdown lists or numbered steps. `No Exceptions.`
+20. All multi-step instructions must be separated using one of the following delimiters: numbered lists, headers, or horizontal rules. `No Exceptions.`
+21. All instructions must specify the expected output format: Markdown, code, or plain text. `No Exceptions.`
+22. All format restrictions must use the exact phrase "Respond only in [format]" where "[format]" names the required output type. `No Exceptions.`
 
 `No Exceptions.`
-
-## Work In Progress Laws
-
-### Core Principles
-
-1. Use explicit and structured language in every instruction.
-2. Use imperative, specific, and unambiguous language.
-3. Define scope precisely. Specify which section or element to modify.
-4. Define output format clearly. State whether you expect Markdown, code, or plain text.
-5. Minimize pronoun use. Repeat key terms rather than referencing them with vague words.
-   - Correct: "Rewrite the summary paragraph."
-   - Incorrect: "Rewrite it."
-6. Use complete words over acronyms. Exception: common terms like "API" or "HTML."
-
-### Punctuation Rules
-
-3. Use brackets and braces only when writing code or format templates.
-
-### Structure and Style Guidelines
-
-1. Break complex logic into multiple sentences, lists, or bullet points.
-2. Avoid chained conjunctions such as “and,” “but,” or “while” when giving instructions.
-3. Use explicit delimiters such as `###` or “Step 1 / Step 2” to separate tasks.
-
-### Context Management
-
-1. Restate essential context or constraints in each major prompt.
-2. Avoid relying on prior messages for critical information.
-3. Provide short reference summaries if a topic continues across messages.
-
-### Output Control
-
-1. Always specify the desired format for responses, such as Markdown, code, or plain text.
-2. If you require a single format, use the phrase: “Respond only in [format].”
-3. Specify whether examples, summaries, or paraphrasing are required.
-
-### Example Usage
-
-1. Try to include a positive example of the desired response structure.
-2. If possible, include a negative example to show what should not occur.
-3. Place examples directly after the instruction they illustrate.

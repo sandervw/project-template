@@ -10,10 +10,10 @@ There is only one Master Law of Sparse Code, and it is this. `No Exceptions.`
 2. All Laws of Sparse Code must be tagged with the Master Law. `No Exceptions.`
 3. All Laws of Sparse Code must deal in absolutes. `No Exceptions.`
 4. All Laws of Sparse Code must be obeyed. `No Exceptions.`
-5. All Laws of Sparse Code must consist of a single sentence, with additional detail specified in ways other than additional sentences: subsequent laws, colon seperated clauses, or parenthetical statements. `No Exceptions.`
-6. All Laws of Sparse Code must be definite and measurable: binary conditions, enumerations, or defining a numeric value. `No Exceptions.`
+5. All Laws of Sparse Code must consist of a single sentence, with additional detail specified in ways other than additional sentences: subsequent laws, colon separated clauses, or parenthetical statements. `No Exceptions.`
+6. All Laws of Sparse Code must be measurable: binary conditions, enumerations, or defining a numeric value. `No Exceptions.`
 7. All Laws of Sparse Code must be declared within a Markdown file. `No Exceptions.`
-8. All Laws of Sparse Code which deal with a specific domain - a programming language, framework, library, tool, design practice, or piece of software - must be declared within a Markdown file specific to that domain. `No Exceptions.`
-9. All Laws of Sparse Code Markdown files should conclude with the Master Law: `No Exceptions.` `No Exceptions.`
+8. All Laws of Sparse Code which deal with a specific domain - a language, framework, library, tool, or design practice - must be declared within a domain-specific Markdown file. `No Exceptions.`
+9. All Laws of Sparse Code Markdown files must conclude with the Master Law: `No Exceptions.` `No Exceptions.`
 
 `No Exceptions.`
