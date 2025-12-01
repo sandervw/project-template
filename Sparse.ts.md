@@ -7,9 +7,18 @@
 
 ## Typescript Specific Laws
 
-TODO: Ideas
+3. Use `strict` mode in `tsconfig.json`. `No Exceptions.`
+4. Use `unknown` instead of `any` for variables with uncertain types. `No Exceptions.`
+5. All function inputs must be `readonly`. `No Exceptions.`
+6. All functions must have explicit return types. `No Exceptions.`
+7. All exported classes, functions, and interfaces must use explicit types for parameters and return values. `No Exceptions.`
+8. Only use implicit types for local variables. `No Exceptions.`
+9. All object shapes must be defined using interfaces. `No Exceptions.`
+10. All primitives, unions, and mapped/conditional types must be defined using type aliases. `No Exceptions.`
+11. All variant objects must use discriminated unions, not class hierarchies. `No Exceptions.`
+12. Use unions of literal types instead of enums. `No Exceptions.`
+13. Use Promises for your own async control flow: only use callbacks for framework-mandated signatures. `No Exceptions.`
+14. All export statements must be at the bottom of the file. `No Exceptions.`
+15. All exports must use named exports, no default exports. `No Exceptions.`
 
-Consult Effective Typescript for more ideas.
-
-All Typescript files must use explicit types for function return values. `No Exceptions.`
-All Typescript files must avoid the use of the `any` type. `No Exceptions.`
+`No Exceptions.`
