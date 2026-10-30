@@ -1,0 +1,28 @@
+name: Bug report
+description: Something is broken or behaves wrong.
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. ...\n2. ...\n3. ..."
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Where it happened
+      description: Browser, device, OS, or version.
+  - type: textarea
+    id: input
+    attributes:
+      label: Input or settings
+      description: Anything needed to reproduce it, such as settings, a seed, or a file.

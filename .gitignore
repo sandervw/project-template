@@ -1,3 +1,18 @@
+# Secrets: never commit these
+.env
+.env.*
+!.env.example
+.projects/vault/
 
-# Claude Code local (machine-specific) settings
+# Local agent state
 .claude/settings.local.json
+.claude/agent-memory-local/
+.claude/worktrees/
+
+# Python tooling for hooks and checks
+__pycache__/
+*.pyc
+.ruff_cache/
+.pytest_cache/
+
+# Build output and tool folders: added at kickoff

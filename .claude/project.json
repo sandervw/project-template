@@ -1,0 +1,26 @@
+{
+  "reviews": {
+    "codeSuffixes": [
+      ".py", ".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs",
+      ".c", ".h", ".cc", ".cpp", ".hpp", ".rs", ".go", ".java", ".kt",
+      ".cs", ".swift", ".rb", ".lua", ".sh", ".sql", ".zig", ".dart"
+    ],
+    "securityPaths": [
+      ".github/",
+      ".claude/hooks/",
+      ".claude/settings.json",
+      ".claude/project.json"
+    ]
+  },
+  "blackbox": {
+    "readablePaths": ["docs/use-cases", "tests/blackbox"],
+    "specFolder": "tests/blackbox",
+    "testCommands": [],
+    "startCommands": [],
+    "safeFlags": [],
+    "allowedTools": [],
+    "navigateTools": [],
+    "allowedHosts": ["localhost", "127.0.0.1"],
+    "allowedHostSuffixes": []
+  }
+}
