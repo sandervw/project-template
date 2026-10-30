@@ -14,7 +14,7 @@ Needs Python 3.10 or newer (hooks and checks), the GitHub CLI, and Claude Code. 
 
 ## What every project gets
 
-- **Always a repo, always agent-built.** You are the CEO; a CTO agent plans, builds, reviews, and merges through PRs. `CLAUDE.md` is its manual; `docs/handoff.md` its running notes.
+- **Always a repo, always agent-built.** You are the CEO; a CTO agent plans, builds, reviews, and merges through PRs. `CLAUDE.md` is its manual; `/handoff` its running notes.
 - **Domain-driven design.** A pure functional core split into bounded contexts, adapter shells with no business rules, a glossary, and a machine-checked boundary rule.
 - **Simple code.** Seven practices and hard house rules (comments of 12 words or fewer, full-word names, files under 300 lines, docs under 700 words), checked on every edit and in CI.
 - **Black-box testing first.** A tester agent that cannot see the code writes specs from user-side use cases. Integration tests come second; unit tests only where nothing else can observe.
@@ -36,9 +36,10 @@ CLAUDE.md                     CTO manual (placeholders filled at kickoff)
   hooks/                      merge gate, black-box tester isolation
   skills/kickoff/             planning session, question agenda, engineer agent template
   skills/implement-issue/     issue to merged PR
+  skills/handoff/             current state and next work, loaded with /handoff
   skills/simple-code/         rules, examples, checker, Python and TypeScript packs
 docs/
-  vision.md  glossary.md  architecture.md  handoff.md  ceo-todo.md
+  vision.md  glossary.md  architecture.md  ceo-todo.md
   use-cases/                  black-box test script
   research/                   tradeoff briefs
 .github/                      CI, issue and PR templates, dependabot

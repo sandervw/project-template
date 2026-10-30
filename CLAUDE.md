@@ -1,6 +1,6 @@
 # [Project]
 
-[One line: what it is and who it is for.] Status: **not started.** Run `/kickoff` to plan it; after that, start each session with `docs/handoff.md`.
+[One line: what it is and who it is for.] Status: **not started.** Run `/kickoff` to plan it; after that, start each session with `/handoff`.
 
 ## Roles
 

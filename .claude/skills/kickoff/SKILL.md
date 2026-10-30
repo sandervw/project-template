@@ -32,7 +32,7 @@ Work through [agenda.md](agenda.md), part by part. For each question:
 4. When the CEO answers, restate the decision in one line and write it into the doc that owns it. If the answer raises a new question, ask it next.
 5. Never decide a CEO item yourself: scope, pricing, brand, legal, anything that costs money or needs their identity.
 
-Keep momentum. A question that can wait until after the MVP goes to "Parked" in `docs/handoff.md` with the reason.
+Keep momentum. A question that can wait until after the MVP goes to "Parked" in `.claude/skills/handoff/SKILL.md` with the reason.
 
 ## 4. Produce the plan
 
@@ -63,6 +63,6 @@ Only after the CEO approves the plan:
 
 ## 7. Close
 
-1. Rewrite `docs/handoff.md`: state, next work, parked questions.
+1. Rewrite `.claude/skills/handoff/SKILL.md`: state, next work, parked questions.
 2. Report: what was decided (by doc), what's parked, the backlog, and the CEO's to-do list.
 3. Commit on a branch named `kickoff`, open a PR, and suggest the next step: `/implement-issue <scaffold issue number>`.
