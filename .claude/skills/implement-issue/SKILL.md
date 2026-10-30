@@ -12,4 +12,4 @@ argument-hint: "<issue number>"
 4. **Test.** `blackbox-tester` writes or updates the use-case specs in `tests/blackbox/`. Add integration tests for storage, outside services, hardware, or other boundaries.
 5. **Check.** Run every command under Commands in `CLAUDE.md`, and `python .claude/skills/simple-code/scripts/check_code.py <changed paths>`. For anything the CEO signed off by eye or ear, compare against it directly (screenshots side by side at each target size, or a render to listen to); any unapproved difference is a fail. Work you cannot verify that way waits on its branch for the CEO.
 6. **Ship.** PR with `Fixes #<number>`. Run `simplicity-reviewer` and `architecture-reviewer`, and `security-reviewer` when `CLAUDE.md` says so, on the final commit; post each PASS comment as `CLAUDE.md` describes. Merge when green, except for anything `CLAUDE.md` says to ask the CEO about.
-7. **Hand off.** Update `docs/handoff.md` if the state or next work changed.
+7. **Hand off.** Update `.claude/skills/handoff/SKILL.md` if the state or next work changed.

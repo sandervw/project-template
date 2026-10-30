@@ -1,6 +1,11 @@
+---
+name: handoff
+description: Current project state, next work, parked questions, and gotchas. Use at the start of every session, and update it when the state or next work changes.
+---
+
 # Handoff
 
-Current state and next work. Rewrite when stale; never log history.
+Current state and next work. Rewrite this file (`.claude/skills/handoff/SKILL.md`) when stale; never log history.
 
 ## State
 
