@@ -1,3 +1,4 @@
-# Sparse
+# [PROJECT]
 
-This is a directory for personal coding standards and css styles used in my projects.
+*This is a template directory for personal coding standards and practices used in my project.*
+
