@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Kickoff: idea and planning session
 
-Goal: leave this session with every MVP-blocking question decided and written into the current docs, so `/implement-issue` can start with no further questions. Write no application code.
+Goal: leave this session with every MVP-blocking question decided and written into the current docs. Write no application code.
 
 Two kinds of writing, kept apart:
 
@@ -20,7 +20,7 @@ Two kinds of writing, kept apart:
 
 ## 2. Map the parts
 
-Break the idea into parts the product needs, with no technology yet: for example the interface a user touches, the core domain logic, storage, an API, firmware, a model, a pipeline, deploy. Show the list and ask the CEO to add, cut, or merge.
+Break the idea into parts the product needs, with no technology yet. Show the list and ask the CEO to add, cut, or merge.
 
 ## 3. Decide, one question at a time
 
@@ -32,11 +32,11 @@ Work through [agenda.md](agenda.md), part by part. For each question:
 4. When the CEO answers, restate the decision in one line and write it into the doc that owns it. If the answer raises a new question, ask it next.
 5. Never decide a CEO item yourself: scope, pricing, brand, legal, anything that costs money or needs their identity.
 
-Keep momentum. A question that can wait until after the MVP goes to "Parked" in `.claude/skills/handoff/SKILL.md` with the reason.
+Keep momentum. A question that can wait until after the MVP goes to "Parked" in `.claude/skills/handoff/SKILL.md`.
 
 ## 4. Produce the plan
 
-1. `architect` writes `docs/architecture.md` and `docs/glossary.md` from the decisions: contexts, context map, shells, interfaces, layout, security.
+1. `architect` writes `docs/architecture.md` and `docs/glossary.md` from the decisions.
 2. `product-manager` writes `docs/use-cases/` from the vision. Use cases describe only what the actor does and observes through the black-box surface decided in the agenda.
 3. Review both against the decisions yourself; fix contradictions before showing the CEO.
 4. Show the CEO a short summary of each, and the full use cases. Get a yes or the changes they want.

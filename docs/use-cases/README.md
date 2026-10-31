@@ -1,6 +1,6 @@
 # Use cases
 
-Black-box test script for [Project]. A tester needs only the product's public surface ([a browser, the CLI, the API, the device]) and this folder. Every use case is written from the actor's side: what they do, and what they see, hear, or get back. UC IDs are stable; never renumber them.
+Black-box test script for [Project]. A tester needs only the product's public surface and this folder. Every use case is written from the actor's side: what they do, and what they see, hear, or get back. UC IDs are stable; never renumber them.
 
 Each use case reads: `**UC-NN Title.** Steps: ... Expected: ...`
 

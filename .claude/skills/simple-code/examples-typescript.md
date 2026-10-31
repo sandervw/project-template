@@ -1,6 +1,6 @@
 # Simple code examples: TypeScript
 
-One before/after per practice, in this project's domain. Every "after" block passes the house rules and the ESLint checks. The Python versions live in [examples.md](examples.md).
+One before/after per practice. Every "after" block passes the house rules and the ESLint checks.
 
 ## 1. Push side effects to the edges
 

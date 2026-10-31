@@ -1,7 +1,5 @@
 ## What changed
 
-## Why
-
 Fixes #
 
 ## How it was tested

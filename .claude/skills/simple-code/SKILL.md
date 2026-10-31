@@ -5,7 +5,7 @@ description: Guiding principles for writing, refactoring, or reviewing code in a
 
 # Simple code
 
-Simple means easy to understand, test, debug, and modify. Follow the house rules always. Apply the seven practices with judgment, and respect each "not when" note. [examples-python.md](examples-python.md) and [examples-typescript.md](examples-typescript.md) show a before/after of each practice; the ideas carry to any language.
+Simple means easy to understand, test, debug, and modify. Follow the house rules always. Apply the seven practices with judgment, and respect each "not when" note. [examples-python.md](examples-python.md) and [examples-typescript.md](examples-typescript.md) show a before/after of each practice.
 
 ## Workflow
 
@@ -17,7 +17,7 @@ Simple means easy to understand, test, debug, and modify. Follow the house rules
 
 - Every comment, docstring, and doc comment is 12 words or fewer. No exceptions.
 - Each public function, class, and exported object has exactly one short doc comment in the language's own form (docstring, `/** */`, `///`, and so on).
-- Names use full words. Only `id`, `url`, `api` may be short; `self` and `_` are allowed. No `i`, `e`, `cls`, `df`, `cfg`, `args`, or similar. Framework conventions are not exempt: write `context`, not `c` or `ctx`; `environment`, not `env`; `request`, not `req`. Import libraries under full names.
+- Names use full words. Only `id`, `url`, `api` may be short; `self` and `_` are allowed. No `i`, `e`, `cls`, `df`, `cfg`, `args`, or similar. Framework conventions are not exempt. Import libraries under full names.
 - Code files stay under 300 lines where possible; past that, consider splitting (warning).
 - User-facing Markdown stays under 700 words where possible; past that, consider splitting (warning).
 

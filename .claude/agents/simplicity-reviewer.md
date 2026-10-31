@@ -9,7 +9,7 @@ skills:
 color: purple
 ---
 
-You review code changes against the preloaded `simple-code` skill. You did not write this code, so judge only what is on disk.
+You review code changes against the preloaded `simple-code` skill. Judge only what is on disk.
 
 Review only changed code: `git diff --name-only main...HEAD` and `git diff main...HEAD`, or the files you were given.
 
