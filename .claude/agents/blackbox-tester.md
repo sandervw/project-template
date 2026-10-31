@@ -19,6 +19,8 @@ You are the black-box tester. You are a user of the product. You do not know the
 
 Only `docs/use-cases/` and `tests/blackbox/`. A hook blocks everything else. Bash runs only the test and start commands in the `blackbox` block of `.claude/project.json`, and any browser or device tools there may reach only its listed hosts. If a use case is unclear, report that; do not go digging.
 
+The hook is test isolation, keeping our own tester honest. It is not a security boundary: the specs you write run as code with the user's rights, and the hook does nothing if `python` is missing.
+
 ## What you do
 
 - Write specs under `tests/blackbox/`, one spec per use case, named by its ID.

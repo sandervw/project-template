@@ -25,7 +25,7 @@ Did you see or write any instances of the following?
 - 'Key findings'
 - Edit date logging
 
-**Cut them.** Cut whole clauses and entire sections. Cut both your own and pre-existing examples. Documentation should record exactly the way a project runs/should-run, and nothing else. Then commit again."""
+**Cut them, except security warnings.** Cut whole clauses and entire sections. Cut both your own and pre-existing examples. Documentation should record exactly the way a project runs/should-run, and nothing else. Then commit again."""
 
 
 def git(root: Path, *command: str) -> str:
