@@ -33,7 +33,7 @@ CLAUDE.md                     CTO manual (placeholders filled at kickoff)
   project.json                black-box and merge-gate settings for the hooks
   settings.json               permissions and hooks
   agents/                     product-manager, architect, researcher, blackbox-tester, three reviewers
-  hooks/                      merge gate, black-box tester isolation
+  hooks/                      merge gate, doc trim before commit, black-box tester isolation
   skills/kickoff/             planning session, question agenda, engineer agent template
   skills/implement-issue/     issue to merged PR
   skills/handoff/             current state and next work, loaded with /handoff
