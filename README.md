@@ -1,6 +1,6 @@
 # Project template
 
-A starting point for any project built with code: a web app, embedded firmware, a machine-learning pipeline, a CLI, anything. It fixes how the work is done, not what it is built with. Languages, frameworks, services, and folder layout are decided per project in a planning session.
+A starting point for any project built with code. Languages, frameworks, services, and folder layout are decided per project in a planning session.
 
 ## Start a project
 
@@ -19,7 +19,7 @@ Needs Python 3.10 or newer (hooks and checks), the GitHub CLI, and Claude Code. 
 - **Simple code.** Seven practices and hard house rules (comments of 12 words or fewer, full-word names, files under 300 lines, docs under 700 words), checked on every edit and in CI.
 - **Black-box testing first.** A tester agent that cannot see the code writes specs from user-side use cases. Integration tests come second; unit tests only where nothing else can observe.
 - **Three reviewers.** Simplicity, architecture, and security, with a hook that blocks merging until they pass on the latest commit.
-- **Current docs, no history.** Docs describe the design as it is now; tradeoffs live in research briefs; git holds the past.
+- **Current docs, no history.** Docs describe the design as it is now; tradeoffs live in research briefs.
 
 ## What kickoff decides
 

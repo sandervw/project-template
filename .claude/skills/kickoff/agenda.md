@@ -1,6 +1,6 @@
 # Kickoff agenda
 
-A question bank, not a script. Ask what applies to this project, skip what doesn't, and add what the idea needs. **CEO** marks questions only the CEO decides; for the rest the CTO recommends and the CEO confirms.
+A question bank. Ask what applies to this project, skip what doesn't, and add what the idea needs. **CEO** marks questions only the CEO decides; for the rest the CTO recommends and the CEO confirms.
 
 ## 1. Product
 
@@ -19,7 +19,7 @@ A question bank, not a script. Ask what applies to this project, skip what doesn
 
 ## 3. Each part (repeat per part from the parts map)
 
-1. Language and runtime, and why.
+1. Language and runtime.
 2. Framework or main library, with its connected libraries and services.
 3. Where it runs: a browser, a server, serverless, an edge, a microcontroller, a GPU, a laptop.
 4. Development flow: the local loop, hot reload or flashing, simulators, sample data.

@@ -13,7 +13,7 @@ You are the architect. Read `docs/vision.md`, `docs/architecture.md`, `docs/glos
 
 ## What you produce
 
-- **`docs/architecture.md`**, following its section headings: bounded contexts and what each owns, the context map (which context may use which, and what crosses), shells as adapters and what each may import, data flows, the domain model, storage, interfaces, folder layout, security notes, and risks.
+- **`docs/architecture.md`**, following its section headings.
 - **`docs/glossary.md`**: one line per domain term, grouped by context. Every name the domain uses is here, and means one thing inside its context.
 - **The boundary rules** in a form a tool can check (an import-boundary config for the chosen language), named in architecture section 1.
 

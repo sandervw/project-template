@@ -4,7 +4,7 @@ One before/after per practice. Every "after" block passes the house rules and th
 
 ## 1. Push side effects to the edges
 
-Before: reading, deciding, and writing are tangled; testing needs a file and a database.
+Before: reading, deciding, and writing are tangled.
 
 ```python
 def apply_late_fees(invoices_path, database_path):
@@ -32,15 +32,6 @@ def late_fees(invoices, today):
         if days_late > 30:
             fees.append((invoice["invoice_id"], round(float(invoice["amount"]) * 0.05, 2)))
     return fees
-
-
-def test_late_fees():
-    """Only invoices more than 30 days late are charged."""
-    invoices = [
-        {"invoice_id": "A", "due_date": "2026-08-01", "amount": "100"},
-        {"invoice_id": "B", "due_date": "2026-10-01", "amount": "100"},
-    ]
-    assert late_fees(invoices, date(2026, 10, 23)) == [("A", 5.0)]
 ```
 
 ```python
@@ -129,8 +120,6 @@ def fetch_rows(database_path, query, parameters=(), retries=3):
                 raise
             time.sleep(0.1 * 2**attempt)
 ```
-
-Prefer `set.discard()` over `set.remove()` in cleanup code; it defines the missing case away.
 
 ## 4. Keep behaviour local
 
