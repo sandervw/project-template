@@ -65,4 +65,4 @@ Only after the CEO approves the plan:
 
 1. Rewrite `.claude/skills/handoff/SKILL.md`: state, next work, parked questions.
 2. Report: what was decided (by doc), what's parked, the backlog, and the CEO's to-do list.
-3. Commit on a branch named `kickoff`, open a PR, and suggest the next step: `/implement-issue <scaffold issue number>`.
+3. Commit on a branch named `kickoff`, open a PR, and suggest the next step: the first batch, starting with the scaffold issue.
