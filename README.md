@@ -8,7 +8,7 @@ A starting point for any project built with code. Languages, frameworks, service
 gh repo create <name> --template sandervw/project-template --private --clone
 ```
 
-Then open the new folder in Claude Code and run `/kickoff`. The CTO agent walks you through the idea and every decision, one question at a time, with researched options and tradeoffs, then fills in the docs, tooling, and backlog. After kickoff, `/implement-issue <number>` takes an issue to a merged PR.
+Then open the new folder in Claude Code and run `/kickoff`. The CTO agent walks you through the idea and every decision, one question at a time, with researched options and tradeoffs, then fills in the docs, tooling, and backlog.
 
 Needs Python 3.10 or newer (hooks and checks), the GitHub CLI, and Claude Code. `python -m pip install ruff` for Python projects.
 
@@ -35,7 +35,6 @@ CLAUDE.md                     CTO manual (placeholders filled at kickoff)
   agents/                     product-manager, architect, researcher, blackbox-tester, three reviewers
   hooks/                      merge gate, doc trim before commit, black-box tester isolation
   skills/kickoff/             planning session, question agenda, engineer agent template
-  skills/implement-issue/     issue to merged PR
   skills/handoff/             current state and next work, loaded with /handoff
   skills/simple-code/         rules, examples, checker, Python and TypeScript packs
 docs/

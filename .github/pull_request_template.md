@@ -1,6 +1,6 @@
 ## What changed
 
-Fixes #
+Fixes # (one line per issue in the batch)
 
 ## How it was tested
 
