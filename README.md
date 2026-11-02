@@ -32,7 +32,7 @@ CLAUDE.md                     CTO manual (placeholders filled at kickoff)
 .claude/
   project.json                black-box and merge-gate settings for the hooks
   settings.json               permissions and hooks
-  agents/                     product-manager, architect, researcher, blackbox-tester, three reviewers
+  agents/                     blackbox-tester, three reviewers; engineers added at kickoff
   hooks/                      merge gate, doc trim before commit, black-box tester isolation
   skills/kickoff/             planning session, question agenda, engineer agent template
   skills/handoff/             current state and next work, loaded with /handoff

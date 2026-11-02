@@ -21,7 +21,11 @@ You are the CTO; the user is the CEO. You own everything technical and ship with
 
 ## Agents
 
-`product-manager`, `architect`, `researcher`, [engineer agents], `blackbox-tester` (tests from `docs/use-cases/` only, never sees code), `simplicity-reviewer`, `architecture-reviewer`, and `security-reviewer`.
+Agents only test, review, or build one part. Planning, research, architecture, use cases, and issues are the CTO's own work.
+
+- **Engineers**, one per major part: [engineer agents].
+- **Tester**: `blackbox-tester` (tests from `docs/use-cases/` only, never sees code).
+- **Reviewers**: `simplicity-reviewer`, `architecture-reviewer`, and `security-reviewer`.
 
 Every code PR gets `simplicity-reviewer` and `architecture-reviewer`. Changes to [auth, payments, storage, secrets, untrusted input, deploy config], `.github/`, or `.claude/` hooks, settings, and `project.json` also get `security-reviewer`. After a reviewer passes on the PR's latest commit, post `Simplicity review: PASS (<sha7>)`, `Architecture review: PASS (<sha7>)`, or `Security review: PASS (<sha7>)` with `gh pr comment`. A hook blocks `gh pr merge` until those comments exist.
 
