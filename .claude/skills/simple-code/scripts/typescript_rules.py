@@ -125,15 +125,24 @@ def convert_eslint_message(path: str, message: dict) -> Finding:
 
 
 def run_eslint(paths: list[str]) -> list[Finding]:
-    """Run ESLint once over these files and convert its findings."""
-    linted = {str(Path(path).resolve()): path for path in paths if not path.endswith(".d.ts")}
-    if not linted:
-        return []
-    first_path = next(iter(linted.values()))
-    located = find_eslint(first_path)
-    if located is None:
-        return [Finding(first_path, 1, "eslint", "eslint is not installed; lint checks skipped", Severity.WARN)]
-    executable, project_folder = located
+    """Run ESLint once per project folder and convert its findings."""
+    projects: dict[tuple[str, Path], list[str]] = {}
+    findings = []
+    for path in (path for path in paths if not path.endswith(".d.ts")):
+        located = find_eslint(path)
+        if located is None:
+            findings.append(Finding(path, 1, "eslint", "eslint is not installed; lint checks skipped", Severity.WARN))
+        else:
+            projects.setdefault(located, []).append(path)
+    for (executable, project_folder), project_paths in projects.items():
+        findings += lint_project(executable, project_folder, project_paths)
+    return findings
+
+
+def lint_project(executable: str, project_folder: Path, paths: list[str]) -> list[Finding]:
+    """Run ESLint once from one project folder over its files."""
+    linted = {str(Path(path).resolve()): path for path in paths}
+    first_path = paths[0]
     relative = [os.path.relpath(path, project_folder) for path in linted]
     command = [executable, "--config", str(ESLINT_CONFIG), "--format", "json", "--no-warn-ignored", *relative]
     result = subprocess.run(command, capture_output=True, text=True, check=False, cwd=project_folder)

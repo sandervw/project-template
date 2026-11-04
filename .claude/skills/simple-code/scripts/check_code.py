@@ -87,9 +87,12 @@ def collect_files(targets: list[str]) -> list[Path]:
     return files
 
 
-def typescript_files(paths: list[Path]) -> list[str]:
-    """Keep the TypeScript and JavaScript files for ESLint."""
-    return [str(path) for path in paths if path.suffix in TYPESCRIPT_SUFFIXES]
+def check_files(paths: list[Path]) -> list[Finding]:
+    """Run every check on these files, with ESLint batched."""
+    findings = run_eslint([str(path) for path in paths if path.suffix in TYPESCRIPT_SUFFIXES])
+    for path in paths:
+        findings += check_file(path)
+    return findings
 
 
 def run_as_hook() -> int:
@@ -98,7 +101,7 @@ def run_as_hook() -> int:
     file_path = payload.get("tool_input", {}).get("file_path")
     if not file_path or Path(file_path).suffix not in CHECKED_SUFFIXES or not Path(file_path).is_file():
         return 0
-    findings = check_file(Path(file_path)) + run_eslint(typescript_files([Path(file_path)]))
+    findings = check_files([Path(file_path)])
     failures = [finding for finding in findings if finding.severity is Severity.FAIL]
     report = "\n".join(finding.render() for finding in findings)
     if failures:
@@ -112,10 +115,7 @@ def run_as_hook() -> int:
 
 def run_as_command(targets: list[str]) -> int:
     """Check files or folders and print a pass or fail report."""
-    files = collect_files(targets or ["."])
-    findings = run_eslint(typescript_files(files))
-    for path in files:
-        findings += check_file(path)
+    findings = check_files(collect_files(targets or ["."]))
     for finding in findings:
         print(finding.render())
     failure_count = sum(finding.severity is Severity.FAIL for finding in findings)
