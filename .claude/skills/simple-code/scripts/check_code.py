@@ -2,6 +2,7 @@
 
 import ast
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -19,7 +20,7 @@ from rules import (
     check_names,
     run_ruff,
 )
-from typescript_rules import TYPESCRIPT_SUFFIXES, check_typescript
+from typescript_rules import TYPESCRIPT_SUFFIXES, check_typescript, run_eslint
 
 CHECKED_SUFFIXES = {".py", ".md"} | TYPESCRIPT_SUFFIXES | OTHER_CODE_SUFFIXES
 
@@ -80,11 +81,15 @@ def collect_files(targets: list[str]) -> list[Path]:
         if target.is_file():
             files.append(target)
             continue
-        for candidate in sorted(target.rglob("*")):
-            skipped = SKIPPED_FOLDERS & set(candidate.parts)
-            if candidate.suffix in CHECKED_SUFFIXES and candidate.is_file() and not skipped:
-                files.append(candidate)
+        for folder, subfolders, names in os.walk(target):
+            subfolders[:] = sorted(set(subfolders) - SKIPPED_FOLDERS)
+            files += [Path(folder, name) for name in sorted(names) if Path(name).suffix in CHECKED_SUFFIXES]
     return files
+
+
+def typescript_files(paths: list[Path]) -> list[str]:
+    """Keep the TypeScript and JavaScript files for ESLint."""
+    return [str(path) for path in paths if path.suffix in TYPESCRIPT_SUFFIXES]
 
 
 def run_as_hook() -> int:
@@ -93,7 +98,7 @@ def run_as_hook() -> int:
     file_path = payload.get("tool_input", {}).get("file_path")
     if not file_path or Path(file_path).suffix not in CHECKED_SUFFIXES or not Path(file_path).is_file():
         return 0
-    findings = check_file(Path(file_path))
+    findings = check_file(Path(file_path)) + run_eslint(typescript_files([Path(file_path)]))
     failures = [finding for finding in findings if finding.severity is Severity.FAIL]
     report = "\n".join(finding.render() for finding in findings)
     if failures:
@@ -107,8 +112,9 @@ def run_as_hook() -> int:
 
 def run_as_command(targets: list[str]) -> int:
     """Check files or folders and print a pass or fail report."""
-    findings = []
-    for path in collect_files(targets or ["."]):
+    files = collect_files(targets or ["."])
+    findings = run_eslint(typescript_files(files))
+    for path in files:
         findings += check_file(path)
     for finding in findings:
         print(finding.render())

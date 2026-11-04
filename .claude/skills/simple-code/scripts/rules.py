@@ -43,6 +43,7 @@ CORE_FORBIDDEN_METHODS = {"now", "today", "utcnow"}
 SKIPPED_FOLDERS = {
     ".git", ".venv", "venv", "node_modules", "__pycache__", "dist",
     "build", "target", "coverage", "playwright-report", "test-results",
+    "vendor", "worktrees",
 }
 OTHER_CODE_SUFFIXES = {
     ".c", ".h", ".cc", ".cpp", ".hpp", ".rs", ".go", ".java", ".kt",
