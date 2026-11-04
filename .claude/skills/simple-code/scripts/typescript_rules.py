@@ -1,6 +1,7 @@
 """TypeScript and JavaScript checks for the simple-code rules."""
 
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -123,26 +124,31 @@ def convert_eslint_message(path: str, message: dict) -> Finding:
     return Finding(path, message.get("line", 1), f"eslint {rule_id}", text, severity)
 
 
-def run_eslint(path: str) -> list[Finding]:
-    """Run ESLint with the kit configuration and convert its findings."""
-    located = find_eslint(path)
+def run_eslint(paths: list[str]) -> list[Finding]:
+    """Run ESLint once over these files and convert its findings."""
+    linted = {str(Path(path).resolve()): path for path in paths if not path.endswith(".d.ts")}
+    if not linted:
+        return []
+    first_path = next(iter(linted.values()))
+    located = find_eslint(first_path)
     if located is None:
-        return [Finding(path, 1, "eslint", "eslint is not installed; lint checks skipped", Severity.WARN)]
+        return [Finding(first_path, 1, "eslint", "eslint is not installed; lint checks skipped", Severity.WARN)]
     executable, project_folder = located
-    command = [executable, "--config", str(ESLINT_CONFIG), "--format", "json"]
-    command += ["--no-warn-ignored", str(Path(path).resolve())]
+    relative = [os.path.relpath(path, project_folder) for path in linted]
+    command = [executable, "--config", str(ESLINT_CONFIG), "--format", "json", "--no-warn-ignored", *relative]
     result = subprocess.run(command, capture_output=True, text=True, check=False, cwd=project_folder)
     if result.returncode not in (0, 1):
         message = f"eslint could not run: {result.stderr.strip()[:200]}"
-        return [Finding(path, 1, "eslint", message, Severity.FAIL)]
+        return [Finding(first_path, 1, "eslint", message, Severity.FAIL)]
     findings = []
     for report in json.loads(result.stdout or "[]"):
+        path = linted.get(report["filePath"], report["filePath"])
         findings += [convert_eslint_message(path, message) for message in report["messages"]]
     return findings
 
 
 def check_typescript(path: str, source: str) -> list[Finding]:
-    """Run every TypeScript check on one file's source."""
+    """Run every TypeScript check except ESLint on one file's source."""
     if path.endswith(".d.ts"):
         return []
     findings = check_comment_length(path, source) + check_jsdoc_presence(path, source)
@@ -150,4 +156,4 @@ def check_typescript(path: str, source: str) -> list[Finding]:
     if line_count > MAX_CODE_LINES:
         message = f"file has {line_count} lines; consider splitting past {MAX_CODE_LINES}"
         findings.append(Finding(path, 1, "file-length", message, Severity.WARN))
-    return findings + run_eslint(path)
+    return findings
