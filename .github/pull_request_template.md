@@ -4,7 +4,7 @@ Fixes # (one line per issue in the batch)
 
 ## How it was tested
 
-- [ ] Use cases pass (IDs):
+- [ ] Use cases pass, one test each (IDs):
 - [ ] Integration tests added or updated where a boundary changed
 - [ ] Simple-code checks and the boundary check pass
 - [ ] Anything the CEO signed off by eye or ear compared side by side

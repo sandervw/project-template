@@ -1,6 +1,7 @@
 """Block `gh pr merge` until review verdicts cover the PR's head commit."""
 
 # Verdicts are PR comments the CTO posts after a reviewer passes.
+# Only comments from the owner, members, and collaborators count.
 # Paths and suffixes come from the reviews block of .claude/project.json.
 # Fails closed: any error blocks the call with exit code 2.
 
@@ -12,6 +13,7 @@ import sys
 from pathlib import Path
 
 MERGE_COMMAND = re.compile(r"\bgh\s+pr\s+merge\b(?P<rest>[^;&|]*)")
+TRUSTED_AUTHORS = frozenset({"OWNER", "MEMBER", "COLLABORATOR"})
 
 
 def review_settings() -> dict:
@@ -50,7 +52,7 @@ def target_in(rest: str) -> str | None:
 
 def github(command: list[str]) -> str:
     """Run a gh command and return its output, raising on failure."""
-    return subprocess.run(command, capture_output=True, text=True, check=True).stdout
+    return subprocess.run(command, capture_output=True, text=True, encoding="utf-8", check=True).stdout
 
 
 def merge_problem(command: str) -> str | None:
@@ -64,7 +66,11 @@ def merge_problem(command: str) -> str | None:
     number = details["number"]
     head = details["headRefOid"]
     paths = [file["path"] for file in details["files"]]
-    comments = [comment["body"] for comment in details["comments"]]
+    comments = [
+        comment["body"]
+        for comment in details["comments"]
+        if comment["authorAssociation"] in TRUSTED_AUTHORS
+    ]
     missing = missing_reviews(required_reviews(paths, review_settings()), comments, head)
     if not missing:
         return None

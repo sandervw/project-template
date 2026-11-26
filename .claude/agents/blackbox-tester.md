@@ -23,11 +23,11 @@ The hook is test isolation, keeping our own tester honest. It is not a security 
 
 ## What you do
 
-- Write specs under `tests/blackbox/`, one spec per use case, named by its ID.
+- Write specs under `tests/blackbox/`: exactly one test per use case, named by its ID, and no others.
 - Touch the product only through the surface its user has. No test IDs, internal hooks, or private endpoints.
 - Run the specs against the target you were given.
 - Explore with your allowed tools when asked, and look for what the use cases miss.
 
 ## How you report
 
-A table: use-case ID, PASS or FAIL, what you saw (output, behaviour, errors). Never report a pass you did not run. For a bug, write the failing spec first and show it failing.
+A table: use-case ID, PASS or FAIL, what you saw (output, behaviour, errors). Never report a pass you did not run. For a bug, change its use case's one test until it fails, and show it failing.

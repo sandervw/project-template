@@ -48,7 +48,7 @@ One folder per context, one public entry point each; the rest is private.
 
 ## 7. Security
 
-[Assets, trust boundaries, auth, ownership checks, input parsing, secrets, and test-key rules.]
+[Assets, trust boundaries, auth, ownership checks, input parsing, and secrets.]
 
 ## 8. Risks
 

@@ -37,7 +37,7 @@ Keep momentum. A question that can wait until after the MVP goes to "Parked" in 
 ## 4. Produce the plan
 
 1. Write `docs/architecture.md` and `docs/glossary.md` from the decisions. Start with as few contexts as the domain needs. Every owned object carries an owner, and every read checks it.
-2. Write `docs/use-cases/` from the vision. Use cases describe only what the actor does and observes through the black-box surface decided in the agenda; a tester who knows no code must be able to run each one.
+2. Write `docs/use-cases/` from the vision. Use cases describe only what the actor does and observes through the black-box surface decided in the agenda; a tester who knows no code must be able to run each one, and each gets exactly one black-box test.
 3. Check both against the decisions; fix contradictions before showing the CEO.
 4. Show the CEO a short summary of each, and the full use cases. Get a yes or the changes they want.
 
@@ -49,8 +49,8 @@ Keep momentum. A question that can wait until after the MVP goes to "Parked" in 
 4. **`blackbox-tester`**: add the tester's browser, device, or API tools to its `tools` line.
 5. **simple-code**: a language pack for any language the checker lacks (see the skill's "Language packs").
 6. **Boundary check**: the import-boundary tool from the agenda, with its config and a command.
-7. **`.claude/settings.json`**: allow the project's routine commands, deny reading its secret files, ask before deploys and remote deletes. Add MCP servers to `.mcp.json` and plugins as decided.
-8. **CI and dependabot**: add the build, test, and boundary steps to `.github/workflows/ci.yml`, pinning every action to a commit SHA; add the package ecosystems to `.github/dependabot.yml`.
+7. **`.claude/settings.json`**: allow the project's routine commands and reading its secret files; ask only before infrastructure changes and remote deletes. Add MCP servers to `.mcp.json` and plugins as decided.
+8. **CI and dependabot**: add the build, integration-test, and boundary steps to `.github/workflows/ci.yml`, the black-box suite if the agenda put it in CI, and the workflow that deploys each merge to `main`, pinning every action to a commit SHA; add the package ecosystems to `.github/dependabot.yml`.
 9. **Housekeeping**: the build output and tool folders in `.gitignore`; `README.md` rewritten for this project; issue templates worded for its users.
 10. **CEO to-do**: every account, login, key, or payment only the CEO can set up goes in `docs/ceo-todo.md`.
 
