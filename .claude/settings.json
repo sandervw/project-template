@@ -7,16 +7,20 @@
       "Bash(git diff *)",
       "Bash(git log *)",
       "Bash(git push *)",
+      "Bash(gh repo list*)",
+      "Bash(gh repo view*)",
       "Bash(gh issue view *)",
       "Bash(gh issue list*)",
       "Bash(gh pr view *)",
       "Bash(gh pr checks *)",
-      "Bash(gh pr merge *)"
+      "Bash(gh pr merge *)",
+      "Bash(gh run list*)",
+      "Bash(gh run view *)",
+      "Bash(gh run watch *)",
+      "Read(./**/.env)",
+      "Read(./**/.env.*)"
     ],
     "deny": [
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Read(./.projects/vault/**)",
       "Bash(git push --force*)",
       "Bash(git push -f*)",
       "Bash(git push * --force*)",
@@ -32,8 +36,13 @@
       "Bash(git push * HEAD:main*)"
     ],
     "ask": [
-      "Bash(gh repo *)",
-      "Bash(gh secret *)"
+      "Bash(gh repo create*)",
+      "Bash(gh repo delete*)",
+      "Bash(gh repo edit*)",
+      "Bash(gh repo rename*)",
+      "Bash(gh repo archive*)",
+      "Bash(gh repo deploy-key*)",
+      "Bash(gh repo sync*)"
     ]
   },
   "hooks": {

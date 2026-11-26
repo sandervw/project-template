@@ -42,10 +42,9 @@ A question bank. Ask what applies to this project, skip what doesn't, and add wh
 ## 6. Testing
 
 1. **The black box.** What surface does the user touch, and what tool drives it: a browser (Playwright), a CLI runner, an API client, a hardware-in-the-loop rig or simulator, an evaluation set?
-2. Where do black-box tests run: a local build, a per-branch preview, a device?
+2. Where do black-box tests run: a local build, a per-branch preview, a device? Does CI run them?
 3. **Integration tests.** Which boundaries need them: storage, outside services, hardware drivers, model inference?
-4. Which properties no black-box test can observe, if any, deserve a unit test (determinism, numerical accuracy)?
-5. What can agents not judge (look, sound, feel, model quality), and how does the CEO review it?
+4. What can agents not judge (look, sound, feel, model quality), and how does the CEO review it?
 
 ## 7. Tooling and agents
 
@@ -59,9 +58,9 @@ A question bank. Ask what applies to this project, skip what doesn't, and add wh
 1. **CEO.** Name, domain, and which accounts the project lives under.
 2. Environments: local, preview per branch, production; or build artifacts and releases.
 3. How it deploys or ships: CI/CD, app stores, firmware updates, model registry.
-4. Secrets: where they live and how agents set them without seeing them.
+4. Secrets: where they live and how the CTO reads and sets them.
 5. Observability: logs, errors, metrics, alerts.
-6. **CEO.** Merge policy: what merges when green, and what waits for the CEO.
+6. **CEO.** Every merge to `main` deploys. Which changes, if any, wait for the CEO?
 7. **CEO.** Public or private repository, and when that changes.
 
 ## 9. Money and legal
